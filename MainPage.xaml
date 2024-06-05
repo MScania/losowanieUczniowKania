@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="losowanieUczniowKania.MainPage"
+             Title=""
+             BackgroundColor="Black">
+
+    <StackLayout Padding="20">
+        <Entry x:Name="NazwaKlasyEntry" Placeholder="Nazwa klasy" BackgroundColor="WhiteSmoke" Margin="0,0,0,10" TextColor="Black" />
+        <Button Text="Dodaj klasę" BackgroundColor="CornflowerBlue" TextColor="White" Clicked="DodajKlase"  Margin="0,0,0,10" />
+        <Button Text="Usuń klasę" BackgroundColor="Firebrick" TextColor="White" Clicked="UsunKlase"  Margin="0,0,0,10" />
+        <ListView x:Name="ListaKlasView" Margin="0,10,0,0" ItemSelected="WybierzKlase">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="10" BackgroundColor="LightBlue" Margin="0,5,0,0">
+                            <Label Text="{Binding}" VerticalOptions="Center" TextColor="Black"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
